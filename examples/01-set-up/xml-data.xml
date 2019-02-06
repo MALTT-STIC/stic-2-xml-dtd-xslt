@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    Link to the DTD so that the XML files "knows" the rules !
+    You must indicate the name of the root element for the DTD to apply to your document.
+    In our case, the root element is the element "page" 
+-->
+<!DOCTYPE page SYSTEM "document-type-definition.dtd">
+
+<!--
+	Link to the XSLT file so that the XML "knows" how to be transformed in HTML
+-->
+<?xml-stylesheet type="text/xsl" href="xslt-transformation.xsl"?>
+
+<!--
+    Since the "page" element is our root, we must start from it.
+    It will contain all the other children
+-->
+
+<page>
+    <header>This is the content of the header element</header>
+    <main>This is the content of the main element</main>
+    <footer>This is the content of the footer element</footer>
+</page>
