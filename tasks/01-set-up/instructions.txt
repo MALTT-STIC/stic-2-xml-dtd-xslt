@@ -1,0 +1,4 @@
+The file welcome.xml contains only the XML data. Provide :
+
+(1) The link to the DTD
+(2) The link to the XSLT 

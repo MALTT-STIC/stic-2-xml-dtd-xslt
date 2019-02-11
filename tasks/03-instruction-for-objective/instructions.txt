@@ -1,0 +1,7 @@
+The XSLT file is missing the template transformation for :
+
+(1) the sequence, 
+(2) the list, and 
+(3) the instruction 
+
+XML elements. Reconstruct them as in the example.

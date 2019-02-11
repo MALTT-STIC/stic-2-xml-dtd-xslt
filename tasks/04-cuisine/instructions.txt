@@ -1,0 +1,1 @@
+Populate the welcome.xml file according to the cuisine.dtd grammar. 

@@ -1,0 +1,29 @@
+<!-- 
+    The DTD file determines two things :
+
+    (1) What kind of element (i.e. tag names and attributes) are valid
+    (2) How the valid elements relate to one another (e.g. parent-child)
+-->
+
+<!-- 
+    Every XML document must stem from a root element, in this case the element "page".
+    In the element declaration, we can also define which elements go directly inside (i.e. the "children").
+    In this case the root element "page" expects three child elements : (1) header, (2) main, (3) footer
+
+-->
+<!ELEMENT page (header, main, footer)>
+
+<!--
+    Every element that appears in the DTD must be explicitly defined.
+    In this case, we must define the three children "header", "main" and "footer", which stem from the "page" element
+    To keep this example as simple as possible, we will not define other elements inside the first-level children.
+-->
+
+<!-- Define the header element, which will accept some content using the #PCDATA notation -->
+<!ELEMENT header (#PCDATA)>
+
+<!-- Define the main element, which will accept some content using the #PCDATA notation -->
+<!ELEMENT main (#PCDATA)>
+
+<!-- Define the footer element, which will accept some content using the #PCDATA notation -->
+<!ELEMENT footer (#PCDATA)>

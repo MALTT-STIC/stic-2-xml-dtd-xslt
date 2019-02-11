@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Add the references to the DTD and XSLT files -->
+
+<page>
+    <header>This is the content of the header element</header>
+    <main>This is the content of the main element</main>
+    <footer>This is the content of the footer element</footer>
+</page>

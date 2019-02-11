@@ -1,0 +1,3 @@
+(1) The XML file is missing data. Provide it based on the DTD
+(2) The XSLT file is missing the link to the CSS. Provid it.
+(3) Modify a bit the XSLT and the CSS to improve the document look-and-feel
