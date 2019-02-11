@@ -1,0 +1,25 @@
+<!--
+    We define a simple DTD that indicates an objective and the instructions to reach it.
+    The instruction can be either ordered (sequence) or unordered (list)
+-->
+
+<!-- We define a root objective that can contain one or more single objective -->
+<!ELEMENT objectives (objective+)>
+
+<!-- The objective contains a title, a description and either a sequence or a list -->
+<!ELEMENT objective (title, description, (sequence | list))>
+
+<!-- The title contains only text -->
+<!ELEMENT title (#PCDATA)>
+
+<!-- The description contains only text -->
+<!ELEMENT description (#PCDATA)>
+
+<!-- A sequence contains one or more instructions -->
+<!ELEMENT sequence (instruction+)>
+
+<!-- Also a list contains one more more instructions -->
+<!ELEMENT list (instruction+)>
+
+<!-- We must define the instruction element, NOTE THAT IT MUST BE DEFINED ONLY ONCE -->
+<!ELEMENT instruction (#PCDATA)>

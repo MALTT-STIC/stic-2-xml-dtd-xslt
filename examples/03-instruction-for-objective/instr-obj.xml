@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE objectives SYSTEM "instr-obj.dtd">
+
+<?xml-stylesheet type="text/xsl" href="instr-obj.xsl"?>
+
+<objectives>
+    <objective>
+        <title>An objective</title>
+        <description>Something that must be done in steps</description>
+        <sequence>
+            <instruction>First thing to do</instruction>
+            <instruction>Second thing to do</instruction>
+            <instruction>...</instruction>
+        </sequence>
+    </objective>
+
+    <objective>
+        <title>Another objective</title>
+        <description>Something that can be done without order</description>
+        <list>
+            <instruction>This must be done</instruction>
+            <instruction>This must also be done</instruction>
+            <instruction>...</instruction>
+        </list>
+    </objective>
+
+</objectives>
