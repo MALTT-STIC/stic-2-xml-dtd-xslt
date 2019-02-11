@@ -1,0 +1,60 @@
+<!-- Déclaration du document qui contient le nom de l'application, la description, le lien hypertextuel, les pages qui la composent, et des éléments communs à différents pages (e.g. header, navigation, etc) -->
+<!ELEMENT web-app (app-info, pages, components?)>
+<!-- Déclaration des info de l'application-->
+<!ELEMENT app-info (app-name, app-description, app-url?)>
+<!-- Nom de l'application (e.g. "EduTech Blog") -->
+<!ELEMENT app-name (#PCDATA)>
+<!-- Description de l'application ("e.g. "Blog qui parle des technologies de l'information") -->
+<!ELEMENT app-description (#PCDATA)>
+<!-- Adresse web de l'application, si déjà disponible (e.g. "http://edutechblog.unige.ch") -->
+<!ELEMENT app-url (#PCDATA)>
+<!-- Déclarations des différentes pages qui composent l'application -->
+<!ELEMENT pages (page+)>
+<!-- Pour chaque page il faut illustrer des informations générales, comme le titre, l'url et la description, ainsi que les trois "layers" MVC -->
+<!ELEMENT page (page-title, page-href?, page-description, model, view, controller)>
+<!-- Titre de la page (e.g. "Page d'accueil") -->
+<!ELEMENT page-title (#PCDATA)>
+<!-- Adresse web relatif de la page, si déjà disponible (sans l'url de l'application) (e.g. "/index.html") -->
+<!ELEMENT page-href (#PCDATA)>
+<!-- Description de la page (e.g. "Page d'accueil du blog avec présentation des derniers articles") -->
+<!ELEMENT page-description (#PCDATA)>
+<!-- Informations relatives au "layer" Model qui comprennent la logic de programmation sous-jacente et les variables mises à disposition des designers -->
+<!ELEMENT model (processes?, variables?)>
+<!-- La logic décrit les processus computationnels -->
+<!ELEMENT processes (process*)>
+<!-- Description des différents processus computationnels actifs dans la page ("e.g. "Recupérer les 10 derniers articles du blog") -->
+<!ELEMENT process (process-description)>
+<!-- Déscription du process -->
+<!ELEMENT process-description (#PCDATA)>
+<!-- Liste des variables mises à disposition des designers -->
+<!ELEMENT variables (var*)>
+<!-- Pour chaque variable on déclare le nom, le type de variable, et son contenu -->
+<!ELEMENT var (var-name, var-type, var-content)>
+<!-- Le nom de la variable indique la notation à travers laquelle les designers peuvent "imprimer sur la page" l'information issues des processus logiques (e.g. "derniersDixArticles") -->
+<!ELEMENT var-name (#PCDATA)>
+<!-- Le type de variable indique les actions que les designers peuvent effectuer sur la variable (e.g. "Array") -->
+<!ELEMENT var-type (#PCDATA)>
+<!-- Description du contenu de la variable (e.g. "Titre, Date, Auteur, Contenu, Url") -->
+<!ELEMENT var-content (#PCDATA)>
+<!-- Information relatives au "layer" View qui comprennent l'agencement du contenu de la page (avec un dessin optionnel) et les éléments communs à d'autres pages -->
+<!ELEMENT view (layout-description, sketch?, components-list?)>
+<!-- Description générale du layout de la page (e.g. "La page d'accueil présente un texte introductif sur l'objectif du blog ainsi que les 10 derniers articles") -->
+<!ELEMENT layout-description (#PCDATA)>
+<!-- Url d'un dessin qui représente la page -->
+<!ELEMENT sketch (#PCDATA)>
+<!-- Listes des noms des éléments communs à différents pages qui sont présents dans cette page (e.g. "Entête, Navigation principale, Pié-de-page") -->
+<!ELEMENT components-list (component-name+)>
+<!-- Informations relatives au "layer" Controller qui comprennent les comportements de l'utilisateur qui peuvent influencer les autres deux "layers" -->
+<!ELEMENT controller (actions)>
+<!-- Liste des interactions possibles avec la page -->
+<!ELEMENT actions (action+)>
+<!-- Description de l'interaction et conséquences événtuelles sur les deux autres layers (e.g. "voir les 10 prochains articles") -->
+<!ELEMENT action (#PCDATA)>
+<!-- Liste des éléments communs à plusieurs pages de l'application -->
+<!ELEMENT components (component*)>
+<!-- Un élément commun a plus au moins les mêmes informations d'une page, y compris les trois "layers" MVC -->
+<!ELEMENT component (component-name, component-description, model, view, controller)>
+<!-- Le nom de l'élément commun (e.g. "Menu principale" -->
+<!ELEMENT component-name (#PCDATA)>
+<!-- La description de l'élément commun -->
+<!ELEMENT component-description (#PCDATA)>

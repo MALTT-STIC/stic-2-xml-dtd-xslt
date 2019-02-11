@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="web-app.xsl" type="text/xsl"?>
+<!DOCTYPE web-app SYSTEM "web-app.dtd">
+ 
+<web-app>
+	<app-info>
+		<app-name>MALTT-NOTES</app-name>
+		<app-description>Application qui permet aux étudiants inscrits au Master MALTT de consulter leurs propres notes obtenues pendant le MASTER</app-description>
+		<app-url>http://tecfa.unige.ch/MALTT-NOTES</app-url>
+	</app-info>
+	<pages>
+		<page>
+			<page-title>Homepage</page-title>
+			<page-href>/index.html</page-href>
+			<page-description>Page d'acculeil de l'application</page-description>
+			<model>
+				<processes>
+					<process>
+						<process-description>Check du login et redirection à la page personnelle</process-description>
+					</process>
+				</processes>
+				<variables>
+					<var>
+						<var-name>loginFailedMessage</var-name>
+						<var-type>String</var-type>
+						<var-content>Message d'erreur si le login n'est pas correct</var-content>
+					</var>
+				</variables>
+			</model>
+			<view>
+				<layout-description>Page d'accueil avec brève description de l'utilité du site et formulaire de login pour accéder à la page personnelle.</layout-description>
+				<sketch>sketches/home.png</sketch>
+				<components-list>
+					<component-name>Header</component-name>
+				</components-list>
+			</view>
+			<controller>
+				<actions>
+					<action>Saisir le formulaire de login</action>
+					<action>Envoyer le formulaire de login</action>
+				</actions>
+			</controller>
+		</page>
+		<page>
+			<page-title>Page personnelle</page-title>
+			<page-href>/{username}/index.html</page-href>
+			<page-description>Page qui s'affiche une fois que l'utilisateur a fait le login et qui présente les notes attribuées dans les deux dernières semaines.</page-description>
+			<model>
+				<processes>
+					<process>
+						<process-description>Récuperer toutes les notes (finales ou intermédiaires) attribuées dans les deux dernières semaines.</process-description>
+					</process>
+				</processes>
+				<variables>
+					<var>
+						<var-name>lastNotes</var-name>
+						<var-type>Array</var-type>
+						<var-content>Date, Cours, Type, Note, Feedback</var-content>
+					</var>
+				</variables>
+			</model>
+			<view>
+				<layout-description>Présentation dans un tableau des notes des derniers semaines.</layout-description>
+				<sketch>sketches/mes-notes.png</sketch>
+				<components-list>
+					<component-name>Header</component-name>
+					<component-name>Menu</component-name>
+				</components-list>
+			</view>
+			<controller>
+				<actions>
+					<action>Si un feedback pour la note est disponible, cliquer sur une icône pour le lire dans une fenêtre modale.</action>
+				</actions>
+			</controller>
+		</page>
+		<page>
+			<page-title>Notes finales</page-title>
+			<page-href>/{username}/finales.html</page-href>
+			<page-description>Affichage des notes finales des cours en fonction des périodes.</page-description>
+			<model>
+				<processes>
+					<process>
+						<process-description>Recuperer les sessions d'examens aux quelles l'étudiant a été inscrit.</process-description>
+					</process>
+					<process>
+						<process-description>Recuperer les notes pour chaque session.</process-description>
+					</process>
+				</processes>
+				<variables>
+					<var>
+						<var-name>periodes</var-name>
+						<var-type>Array</var-type>
+						<var-content>Semestre, Année</var-content>
+					</var>
+					<var>
+						<var-name>notes</var-name>
+						<var-type>Array</var-type>
+						<var-content>Semestre, Année, Cours, Credits, Note, Feedback</var-content>
+					</var>
+				</variables>
+			</model>
+			<view>
+				<layout-description>Afficher les notes finales dans un tableau</layout-description>
+				<components-list>
+					<component-name>Header</component-name>
+					<component-name>Menu</component-name>
+				</components-list>
+			</view>
+			<controller>
+				<actions>
+					<action>Si un feedback pour la note est disponible, cliquer sur une icône pour le lire dans une fenêtre modale.</action>
+					<action>Si le cours présente des notes intermédiaire, cliquer sur une icône pour afficher les détails dans une fenêtre modale</action>
+					<action>Imprimer la liste des notes finales</action>
+				</actions>
+			</controller>
+		</page>
+		<page>
+			<page-title>Toutes les notes</page-title>
+			<page-href>/{username}/toutes.html</page-href>
+			<page-description>Affichage de toutes les notes attribués à l'étudiant avec des filtres pour restreindre les résultats.</page-description>
+			<model>
+				<processes>
+					<process>
+						<process-description>Recuperer les notes selon la composition de différents filtres (Semestre, Année, Cours, Type de note)</process-description></process>
+				</processes>
+				<variables>
+					<var>
+						<var-name>notes</var-name>
+						<var-type>Array</var-type>
+						<var-content>Semestre, Année, Cours, Type, Note, Feedback</var-content>
+					</var>
+					<var>
+						<var-name>semesters</var-name>
+						<var-type>Array</var-type>
+						<var-content>Liste des semestres</var-content>
+					</var>
+					<var>
+						<var-name>years</var-name>
+						<var-type>Array</var-type>
+						<var-content>Liste des années accadémiques</var-content>
+					</var>
+					<var>
+						<var-name>courses</var-name>
+						<var-type>Array</var-type>
+						<var-content>Liste des cours universitaires</var-content>
+					</var>
+					<var>
+						<var-name>types</var-name>
+						<var-type>Boolean</var-type>
+						<var-content>0 pour note intermédiaire et 1 pour note finale</var-content>
+					</var>
+				</variables>
+			</model>
+			<view>
+				<layout-description>Liste des notes dans un tableau avec formulaire de recherche pour affiner les résultats</layout-description>
+				<components-list>
+					<component-name>Header</component-name>
+					<component-name>Menu</component-name>
+				</components-list>
+			</view>
+			<controller>
+				<actions>
+					<action>Choisir le type de semestre</action>
+					<action>Choisir l'année académique</action>
+					<action>Choisir le cours</action>
+					<action>Choisir le type de note (final ou intermédiaire)</action>
+					<action>Si un feedback pour la note est disponible, cliquer sur une icône pour le lire dans une fenêtre modale.</action>
+				</actions>
+			</controller>
+		</page>
+	</pages>
+	<components>
+		<component>
+			<component-name>Header</component-name>
+			<component-description>Entête générale</component-description>
+			<model>
+				<processes>
+					<process>
+						<process-description>Contrôle si l'utilisateur a fait le login pour montrer ou pas le lien de logout</process-description>
+					</process>
+				</processes>
+				<variables>
+					<var>
+						<var-name>isLoogedIn</var-name>
+						<var-type>Boolean</var-type>
+						<var-content>Vrai ou fausse selon que l'utilisateur ait fait ou pas le login</var-content>
+					</var>
+				</variables>
+			</model>
+			<view>
+				<layout-description>Logo de l'application, titre et éventuel lien de logout</layout-description>
+			</view>
+			<controller>
+				<actions>
+					<action>Aucune action disponible</action>
+				</actions>
+			</controller>
+		</component>
+		<component>
+			<component-name>Menu</component-name>
+			<component-description>Menu principale pour utiliser l'application</component-description>
+			<model>
+				<processes>
+					<process>
+						<process-description>Contrôle de la page actuelle pour mettre en évidence le  lien correpondant dans les entrées du menu</process-description>
+					</process>
+				</processes>
+				<variables>
+					<var>
+						<var-name>currentUrl</var-name>
+						<var-type>String</var-type>
+						<var-content>URL de la page currente</var-content>
+					</var>
+				</variables>
+			</model>
+			<view>
+				<layout-description>Liste des liens principales de l'application organisés verticalement</layout-description>
+			</view>
+			<controller>
+				<actions>
+					<action>Choisir un lien du menu principale</action>
+				</actions>
+			</controller>
+		</component>
+	</components>
+</web-app>
