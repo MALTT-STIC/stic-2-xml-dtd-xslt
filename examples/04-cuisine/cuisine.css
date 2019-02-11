@@ -1,0 +1,77 @@
+/* Rachel Dolores - COAP 2180 */
+/* Style properties for Recipe XML file */
+/* dolores.css */
+
+
+
+/* Over-all HTML body - defines over-all margins */
+body {margin: 2em;}
+
+
+
+/* Over-all Recipe - defines margins per recipe */
+.recipe {margin-top: 1em;
+	margin-bottom: 3em;
+	width: 650px;}
+
+
+
+/* Recipe Head */
+.recipe_head {margin-bottom: 1em;    
+		padding: .5em;
+		border-bottom: #c66 1px dashed;
+		border-top: #c66 1px dashed;
+		background: #fcc;
+		font-family: Georgia, "Times New Roman", serif; /* Defines basic font, color and background properties for over-all recipe title */
+		color: #c66;
+		font-size:1.3em;
+		line-height:1.5em;}
+.recipe_name {font-weight: bold;    /* Creates contrasting colored box for the recipe's title */
+		font-variant: small-caps;}
+.recipe_author {font-style: italic;
+		font-size:.8em;
+		line-height:1.7em;
+		letter-spacing: .1em;
+		margin-left: 1em;}
+
+
+
+/* Recipe Body */
+.recipe_body {color:#303030;   /* Defines basic font, color and background properties for over-all recipe body */
+		font: .75em/2em Verdana, Arial, sans-serif;}
+.pictures, .links {padding: 1em;   /* Positions the picture and link boxes, sets background color, padding and width */
+			position: absolute;
+			background: #fcc;
+			width: 185px;
+			left: 470px;}
+.pictures {text-align: center;   /* Sets the picture box 20px below the header */
+			margin-top: 20px;}
+.links {margin-top: 130px;} /* Sets the links box to the bottom of the picture box */
+.links h3	{color: #c66;
+			font: 1em Georgia, "Times New Roman", serif;
+			font-variant: small-caps;
+			text-align:center;}   /* Defines style properties for title text */
+.links li {margin-left: -25px;
+			text-align: left;}
+a		{font: italic .9em "Arial Narrow", Arial, Helvetica, serif;   /* Defines style properties for links */
+		color: #303030;
+		text-decoration: none;}
+a:hover {text-decoration: line-through;}   /* Defines style properties for links when mouse is over it */
+.ingredients {margin-bottom: 1em;}
+.ingredients h1, .directions h1 {font: italic 1.1em/.8em Georgia, "Times New Roman", serif;   /* Formats the labels given to the ingredients and directions list */
+		letter-spacing: .1em;
+		color:#c66;}
+.direction {list-style-type: square;}
+
+
+
+/* Recipe Footer */
+.recipe_footer {margin-top: 1em;}
+.serving, .preparation_time {font: italic .8em/1.7em Georgia, "Times New Roman", serif;
+		letter-spacing: .1em;
+		color:#c66;}
+
+
+
+/* Document Info */
+.document_info {display: none;} /* Hides the document_info tag */

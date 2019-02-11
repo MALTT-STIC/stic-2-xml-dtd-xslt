@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet href="cuisine.xsl" type="text/xsl"?>
+<!DOCTYPE recipe SYSTEM "cuisine.dtd">
+
+  <recipe meal_type="Fish and Shellfish"> 
+  	 	
+  	<recipe_head>
+  		<recipe_name>Cold Salmon in Creamy Spiced Sauce</recipe_name>
+ 	 	<recipe_author>Hilaire Walden</recipe_author>
+  	</recipe_head>
+  	
+  	<recipe_body>
+  		<pictures>
+  			<picture>dolores_001.jpg</picture><!-- Inserts descriptive image of first recipe -->
+  		</pictures>
+  		<links>
+  			<link><!-- Adds links to other similar recipes -->
+  				<link_url>http://www.diabetic-recipes.com/recipes/AUG99_5.2.htm</link_url>
+  				<link_description>Cold Salmon with Shrimp &amp; Herb Sauce</link_description>
+  			</link>
+  			<link>
+  				<link_url>http://recipes.epicurean.com/recipe/20221/cold-salmon-with-mustard-sauce.html</link_url>
+  				<link_description>Cold Salmon with Mustard Sauce</link_description>
+  			</link>	
+  		</links>
+	  	<ingredients>
+	  	  <ingredient>1/2 teaspoon finely crushed cumin seeds</ingredient>
+	  	  <ingredient>1 teaspoon chilli powder</ingredient>
+	  	  <ingredient>salt and freshly ground black pepper</ingredient>
+	  	  <ingredient>2 tablespoons olive oil</ingredient>
+	  	  <ingredient>2 cloves garlic, crushed</ingredient>
+	  	  <ingredient>1.25 cm (1/2 in) fresh ginger root, finely chopped</ingredient>
+	  	  <ingredient>4 pieces salmon fillet, skinned</ingredient>
+	  	  <ingredient>125 ml (4 fl oz / 1/2 cup) double (heavy) cream</ingredient>
+	  	  <ingredient>250 ml (8 fl oz / 1 cup) thick plain yogurt</ingredient>
+	  	  <ingredient>large pinch of saffron threads, toasted and crushed</ingredient>
+  		  <ingredient>seeds from 6 cardamom pods, toasted and finely crushed</ingredient>
+	  	  <ingredient>salt</ingredient>
+  		  <ingredient>coriander (cilantro) to garnish</ingredient>
+	  	</ingredients>
+  		<directions>
+	  		<direction>Mix together the cumin seeds, chilli powder and pepper and rub into the fish.</direction>
+  			<direction>Heat the oil in a frying pan, add the garlic and ginger and heat until they sizzle.</direction>
+  			<direction>Add the salmon fillets and fry until they start to colour (about 15-20 seconds on each side).</direction>
+  			<direction>Stir in the cream, yogurt, saffron, cardamom and salt.</direction>
+  			<direction>Adjust the heat so that the sauce is just bubbling and cook, turning the fish once, until the flesh just flakes when tested with the point of a sharp knife (about 3-4 minutes each side).</direction>
+  			<direction>Transfer the fish to a shallow dish. Boil the sauce until it has reduced and thickened, pour over the fish and leave to cool.</direction>
+			<direction>Cover the dish and chill until 15-20 minutes before serving.</direction>
+			<direction>Garnish with coriander (cilantro).</direction>
+	  	</directions>
+  	</recipe_body>
+
+  	<recipe_footer>
+  		<serving>4</serving>
+  		<preparation_time>15 minutes</preparation_time>
+  	</recipe_footer>
+  	
+  	<document_info>
+  		<document_author>Hilaire Walden</document_author>
+  		<date_updated>21/01/07</date_updated>
+  		<source>Easy to Cook, Hot &amp; Spicy</source>
+  	</document_info>
+  </recipe>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE recipe SYSTEM "cuisine.dtd">
+<?xml-stylesheet href="cuisine.xsl" type="text/xsl"?>
+
+<recipe>
+  <recipe_head>
+    <recipe_name>A faire ...</recipe_name>
+  </recipe_head>
+</recipe>
