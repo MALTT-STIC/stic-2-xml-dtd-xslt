@@ -1,0 +1,6 @@
+<!ELEMENT addressBook (person)+>
+<!ELEMENT person (name,email*)>
+<!ELEMENT name (family,given)>
+<!ELEMENT family (#PCDATA)>
+<!ELEMENT given (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
